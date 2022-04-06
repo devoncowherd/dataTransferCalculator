@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic&display=swap" rel="stylesheet"> 
+        <script defer src="main.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Transfer Time</h1>
+        </header>
+        <main>
+            <section> 
+                <input type="userInput" class="userInput" value="File Size">
+                <select class="dataSize">
+                    <option value="tb">TB</option>
+                    <option value="gb">GB</option>
+                    <option value="mb">MB</option>
+                    <option value="kb">KB</option>
+                </select>
+                <br>
+                <select class="busType">
+                    <option value="1">USB 1.0</option>
+                    <option value="2">USB 2.0</option>
+                    <option value="3">USB 3.0</option>
+                    <option value="c">USB C</option>
+                    <option value="l">Lightning</option>
+                    <option value="t">Thunderbolt 3</option>
+                </select>
+                <br>
+                <br>
+                <input type="submit" class="estimate" value="Estimate">
+            </section>
+            <section class="output">
+                <p>How  <b>fast</b> will your data transfer?</p>
+            </section>
+        </main>
+        <footer><p>Listed Connnectors are Applicable Connectors as of 2022</p></footer>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+html,body
+{
+    background-color: rgba(20,20,20,1);
+    color: white;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 2%;
+}
+
+.divider 
+{
+    border: solid white 1px;
+}
+
+h1, h3
+{
+    padding: 0px;
+    margin: 0px;
+}
+
+input
+{
+    width: 250px;
+    text-align: center;
+    font-size: 1.5em;
+    color:rgba(20,20,20,.4);
+}
+
+select
+{
+    text-align: center;
+    font-size: 1.5em;
+    color:rgba(20,20,20,.4);
+}
+
+button
+{
+    font-size: 1.5em;
+}
+
+footer
+{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    opacity: 0.1;
+}
