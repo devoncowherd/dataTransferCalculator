@@ -5,17 +5,17 @@ console.log("...script loaded!");
 // Gigabyte = 1000 megabytes
 //USB 1.0 = 1.5Mbps, USB 2.0 = 480Mbps, USB 3.0 480*10, 10gbps,
 
-let bit = 1
+let bit = 1;
 let byte = bit * 8;
 let kilobyte = byte * 1000;
 let megabyte = kilobyte * 1000;
 let gigabyte = megabyte * 1000;
 let terabyte = gigabyte * 1000;
-let sec = 1;
-let min = sec * 60;
-let hour = min * min;
-let day = hour * 24;
-let year = day * 365;
+let sec = 60;
+let min = 60;
+let hour = 60;
+let day = 24;
+let year = 365;
 let accuracy = "seconds";
 
 //queries
@@ -26,13 +26,19 @@ let estimate = document.querySelector(".estimate");
 let output = document.querySelector(".output");
 
 //Sets Default Values
-let currentBus = "1";
+let currentBus = busType.value;
+console.log(busType.value);
 let size = terabyte;
 let userData = 0;
 let time = 0;
 let rate = megabyte + (megabyte/2);
 let value = 1;
 
+//resets browser values
+busType.setAttribute("value","1");
+
+
+//clears default userInput
 userInput.addEventListener("click",(event)=>
 {
     userInput.setAttribute("value","");
@@ -74,7 +80,6 @@ busType.addEventListener("change",(event)=>
         case "t":
             rate = gigabyte * 10;
             console.log(`${currentBus} transfers at ${rate} bits per second`);
-
             break;
         default:
             console.log(`${currentBus} transfers at ${rate} bits per second`);
@@ -120,6 +125,8 @@ function getInput()
 function formula(userData, size,rate)
 {
     time = (userData * size) / rate;
+    console.log(time);
+
 }
 
 //proportion
@@ -151,16 +158,8 @@ function proportion(time)
         accuracy = "seconds";
     }
     console.log(time);
-}
-
-//Calculate
-estimate.addEventListener("click",(event)=>
-{
-    getInput();
-    formula(userData, size, rate);
-    proportion(time);
     
-    
+       
 
     if(userData > 0 && userData != NaN)
     {
@@ -171,6 +170,16 @@ estimate.addEventListener("click",(event)=>
     {
         output.textContent = "Please Input a Number Value Greater Than 0";
     }
+}
+
+//Calculate
+estimate.addEventListener("click",(event)=>
+{
+    getInput();
+    formula(userData, size, rate);
+    proportion(time);
+    
+ 
 });
 
 
