@@ -26,12 +26,12 @@ let estimate = document.querySelector(".estimate");
 let output = document.querySelector(".output");
 
 //Sets Default Values
-let currentBus = busType.value;
+let currentBus = "c";
 console.log(busType.value);
 let size = terabyte;
 let userData = 0;
 let time = 0;
-let rate = megabyte + (megabyte/2);
+let rate = gigabyte * 10;
 let value = 1;
 
 //resets browser values
